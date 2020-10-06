@@ -19,3 +19,7 @@ variable "zone" {
 variable "cidrs" {
   default = [] 
 }
+
+variable "test_env" {
+  default = [] 
+}
