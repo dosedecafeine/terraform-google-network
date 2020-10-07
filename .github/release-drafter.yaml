@@ -26,8 +26,8 @@ version-resolver:
   patch:
     labels:
       - 'patch'
-      - 'bug'
       - 'fix'
+      - 'bug'
       - 'bugfix'
       - 'hotfix'
   default: 'minor'
