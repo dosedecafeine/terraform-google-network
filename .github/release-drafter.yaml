@@ -2,52 +2,52 @@
 autolabeler: 
   - 
     branch: 
-      - /docs\/.+/
+      - "/docs\/.+/"
     files: 
       - "*.md"
-    label: chore
+    label: "chore"
   - 
     branch: 
-      - /fix\/.+/
-    label: fix
+      - "/fix\/.+/"
+    label: "fix"
   - 
     branch: 
-      - /feature\/.+/
-    label: enhancement
+      - "/feature\/.+/"
+    label: "enhancement"
 categories: 
   - 
     labels: 
-      - feature
-      - enhancement
+      - "feature"
+      - "enhancement"
     title: "🚀 Features"
   - 
     labels: 
-      - fix
-      - bug
-      - bugfix
-      - hotfix
+      - "fix"
+      - "bug"
+      - "bugfix"
+      - "hotfix"
     title: "🐛 Bug Fixes"
   - 
-    label: chore
+    label: "chore"
     title: "🧰 Maintenance"
 change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
-change-title-escapes: \<*_&
+change-title-escapes: "\<*_&"
 name-template: "v$RESOLVED_VERSION 🌈"
-tag-template: v$RESOLVED_VERSION
-template: $CHANGES
+tag-template: "v$RESOLVED_VERSION"
+template: "$CHANGES"
 version-resolver: 
-  default: minor
+  default: "minor"
   major: 
     labels: 
-      - major
+      - "major"
   minor: 
     labels: 
-      - minor
+      - "minor"
   patch: 
     labels: 
-      - patch
-      - fix
-      - bug
-      - bugfix
-      - hotfix
-version-template: $MAJOR.$MINOR.$PATCH
+      - "patch"
+      - "fix"
+      - "bug"
+      - "bugfix"
+      - "hotfix"
+version-template: "$MAJOR.$MINOR.$PATCH"
