@@ -10,6 +10,10 @@ autolabeler:
     branch: 
       - /fix\/.+/
     label: fix
+  -
+    branch: 
+      - /hotfix\/.+/
+    label: hotfix
   - 
     branch: 
       - /feature\/.+/
