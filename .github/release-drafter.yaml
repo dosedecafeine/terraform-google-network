@@ -1,57 +1,100 @@
---- 
-autolabeler: 
-  - 
-    branch: 
-      - /docs\/.+/
-    files: 
-      - "*.md"
-    label: chore
-  - 
-    branch: 
-      - /fix\/.+/
-    label: fix
-  -
-    branch: 
-      - /hotfix\/.+/
-    label: hotfix
-  - 
-    branch: 
-      - /feature\/.+/
-    label: enhancement
-categories: 
-  - 
-    labels: 
-      - feature
-      - enhancement
-    title: "🚀 Features"
-  - 
-    labels: 
-      - fix
-      - bug
-      - bugfix
-      - hotfix
-    title: "🐛 Bug Fixes"
-  - 
-    label: chore
-    title: "🧰 Maintenance"
-change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
-change-title-escapes: \<*_&
-name-template: "v$RESOLVED_VERSION 🌈"
-tag-template: v$RESOLVED_VERSION
+#--- 
+#autolabeler: 
+#  - 
+#    branch: 
+#      - /docs\/.+/
+#    files: 
+#      - "*.md"
+#    label: chore
+#  - 
+#    branch: 
+#      - /fix\/.+/
+#    label: fix
+#  -
+#    branch: 
+#      - /hotfix\/.+/
+#    label: hotfix
+#  - 
+#    branch: 
+#      - /feature\/.+/
+#    label: enhancement
+#categories: 
+#  - 
+#    labels: 
+#      - feature
+#      - enhancement
+#    title: "🚀 Features"
+#  - 
+#    labels: 
+#      - fix
+#      - bug
+#      - bugfix
+#      - hotfix
+#    title: "🐛 Bug Fixes"
+#  - 
+#    label: chore
+#    title: "🧰 Maintenance"
+#change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
+#change-title-escapes: \<*_&
+#name-template: "v$RESOLVED_VERSION 🌈"
+#tag-template: v$RESOLVED_VERSION
+#template: $CHANGES
+#version-resolver: 
+#  default: minor
+#  major: 
+#    labels: 
+#      - major
+#  minor: 
+#    labels: 
+#      - minor
+#  patch: 
+#    labels: 
+#      - patch
+#      - fix
+#      - bug
+#      - bugfix
+#      - hotfix
+#version-template: $MAJOR.$MINOR.$PATCH
+#
+
+---
+name-template: 'v$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
+version-template: '$MAJOR.$MINOR.$PATCH'
+version-resolver:
+  major:
+    labels:
+    - 'major'
+  minor:
+    labels:
+    - 'minor'
+    - 'enhancement'
+  patch:
+    labels:
+    - 'patch'
+    - 'fix'
+    - 'hotfix'
+    - 'bug'
+    - 'bugfix'
+  default: 'minor'
+
+categories:
+- title: '🚀 Enhancements'
+  labels:
+  - 'enhancement'
+  - 'patch'
+- title: '🐛 Bug Fixes'
+  labels:
+  - 'fix'
+  - 'bugfix'
+  - 'bug'
+  - 'hotfix'
+
+change-template: |
+  <details>
+    <summary>$TITLE @$AUTHOR (#$NUMBER)</summary>
+
+    $BODY
+  </details>
+
 template: $CHANGES
-version-resolver: 
-  default: minor
-  major: 
-    labels: 
-      - major
-  minor: 
-    labels: 
-      - minor
-  patch: 
-    labels: 
-      - patch
-      - fix
-      - bug
-      - bugfix
-      - hotfix
-version-template: $MAJOR.$MINOR.$PATCH
